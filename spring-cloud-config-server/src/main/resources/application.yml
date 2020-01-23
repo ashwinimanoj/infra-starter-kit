@@ -6,5 +6,5 @@ spring:
     config:
       server:
         git:
-          uri: file:///Users/suyashs/Projects/infrastarterkit/config-repo
+          uri: file:///Users/suyashs/Projects/config-repo
           clone-on-start: true
