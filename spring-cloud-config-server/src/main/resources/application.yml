@@ -8,3 +8,12 @@ spring:
         git:
           uri: file:///Users/suyashs/Projects/spring-cloud-config
           clone-on-start: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: conditions,env,health,httptrace,info,keepalive,krypt,logfile,refresh,beans,metrics,mappings
+  metrics:
+    enable:
+      system: true

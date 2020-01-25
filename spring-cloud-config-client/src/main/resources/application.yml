@@ -5,3 +5,12 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: conditions,env,health,httptrace,info,keepalive,krypt,logfile,refresh,beans,metrics,mappings
+  metrics:
+    enable:
+      system: true
