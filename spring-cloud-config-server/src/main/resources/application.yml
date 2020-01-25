@@ -6,5 +6,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/singsuyash/spring-cloud-config
+          uri: file:///Users/suyashs/Projects/spring-cloud-config
           clone-on-start: true
