@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  spring-cloud-config-server:
+    container_name: spring-cloud-config-server
+    image: singsuyash/spring-cloud-config-server:latest
+    environment:
+      CLOUD_CONFIG_REPO_URL: https://github.com/singsuyash/spring-cloud-config
+    ports:
+      - "8888:8888"
+    networks:
+      - spring-cloud-network
+
+  spring-cloud-config-client:
+    container_name: spring-cloud-config-client
+    image: singsuyash/spring-cloud-config-client:latest
+    environment:
+      CONFIG_SERVER_URL: http://spring-cloud-config-server:8888
+    depends_on:
+      - spring-cloud-config-server
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-cloud-network
+
+networks:
+  spring-cloud-network:
+    driver: bridge
